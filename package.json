@@ -4,7 +4,8 @@
     "description": "trabajo practico n1 - backend lista tareas",
     "main": "index.js",
     "scripts": {
-        "start": "babel-node src/index.js"
+        "start": "babel-node src/index.js",
+        "dev": "nodemon --exec babel-node src/index.js"
     },
     "author": "Agustin Sampayo",
     "license": "ISC",
