@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import path from "path";
+import "./database";
 
 console.log("hola mundo");
 //instancio express
