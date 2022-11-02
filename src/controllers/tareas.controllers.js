@@ -24,7 +24,9 @@ export const agregarTarea = async (req, res) => {
         res.status(201).json({ mensaje: "La tarea se agrego correctamente" });
     } catch (error) {
         console.log(error);
-        res.status(404).json();
+        res.status(404).json({
+            mensaje: "ocurrio un error al intentar agregar la tarea",
+        });
     }
 };
 

@@ -5,7 +5,6 @@ import path from "path";
 import "./database";
 import tareaRouter from "./routes/tareas.routes";
 
-console.log("hola mundo");
 //instancio express
 const app = express();
 
@@ -25,4 +24,4 @@ app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
 
 //RUTAS
-app.use("apitarea", tareaRouter);
+app.use("/apitareas", tareaRouter);
