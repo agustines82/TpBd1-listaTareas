@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import path from "path";
 import "./database";
+import tareaRouter from "./routes/tareas.routes";
 
 console.log("hola mundo");
 //instancio express
@@ -24,3 +25,4 @@ app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
 
 //RUTAS
+app.use("apitarea", tareaRouter);
