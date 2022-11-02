@@ -1,10 +1,10 @@
 import mongoose, { Schema } from "mongoose";
 const tareaSchema = new Schema({
-    nombreTarea: {
+    laTarea: {
         type: String,
         required: true,
         unique: true,
-        minLenght: 2,
+        minLenght: 1,
         maxLenght: 100,
     },
 });

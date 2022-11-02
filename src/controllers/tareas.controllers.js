@@ -1,4 +1,6 @@
 import Tarea from "../models/tarea";
+import { validationResult } from "express-validator";
+
 export const listaTareas = async (req, res) => {
     try {
         const tareas = await Tarea.find();
@@ -11,6 +13,12 @@ export const listaTareas = async (req, res) => {
 
 export const agregarTarea = async (req, res) => {
     try {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errores: errors.array(),
+            });
+        }
         const tareaNueva = new Tarea(req.body);
         await tareaNueva.save();
         res.status(201).json({ mensaje: "La tarea se agrego correctamente" });
